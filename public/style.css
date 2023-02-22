@@ -1,0 +1,11 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+    width:12.5rem
+}
+.inputRow{
+    display: flex;
+    width:15rem;
+    justify-content:space-between;
+    margin-bottom:3rem;
+}

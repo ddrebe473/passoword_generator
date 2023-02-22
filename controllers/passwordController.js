@@ -9,16 +9,18 @@ const getPasswords = async (req, res) => {
 };
 
 const createPassword = async (req, res) => {
-    const { symbol, upper, lower, num, service, url } = req.body;
-
-    if ((!symbol && !upper && !lower && !num) || !service || !url) {
+    const { symbol, upper, lower, num, service, url, len } = req.body;
+    let includeNoCharsChoices = !symbol && !upper && !lower && !num;
+    if (includeNoCharsChoices || !service || !url || len<=0) {
+        return res.status(400).json(false);
     }
+    
+    let password = generate(symbol, upper, lower, num, len)
+    
+    await Password.create({ service, url, password });
 
-    await Password.create({ symbol, upper, lower, num, service, url });
+    return res.status(200).json(true);
 
-    let gen = generate()
-
-    return res.status(200).json(gen);
 };
 
 module.exports = {

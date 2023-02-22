@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<button id="Btn" onclick="gen()">Click me</button>
-</body>
-<script src="./script.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="inputs">
+            <div class="inputRow">
+                <label for="lower"> lowercase </label>
+                <input
+                    type="checkbox"
+                    id="lower"
+                    name="checkbox"
+                    checked="true"
+                />
+            </div>
+
+            <div class="inputRow">
+                <label for="upper"> uppercase </label>
+                <input
+                    type="checkbox"
+                    id="upper"
+                    name="checkbox"
+                    checked="true"
+                />
+            </div>
+
+            <div class="inputRow">
+                <label for="symbol"> symbols </label>
+                <input
+                    type="checkbox"
+                    id="symbol"
+                    name="checkbox"
+                    checked="true"
+                />
+            </div>
+
+            <div class="inputRow">
+                <label for="num"> numbers </label>
+                <input
+                    type="checkbox"
+                    id="num"
+                    name="checkbox"
+                    checked="true"
+                />
+            </div>
+
+            <div class="inputRow">
+                <label for="len">length </label>
+                <input type="number" id="len" name="checkbox" />
+            </div>
+
+            <div class="inputRow">
+                <label for="service"> service </label>
+                <input type="text" id="service" name="checkbox" />
+            </div>
+
+            <div class="inputRow">
+                <label for="url"> url </label>
+                <input type="text" id="url" name="checkbox" />
+            </div>
+        </div>
+
+        <button id="Btn" onclick="generatePassword()">Click me</button>
+
+        <div id="passList"></div>
+    </body>
+    <script src="./script.js"></script>
 </html>
